@@ -26,7 +26,6 @@ export function Animals({animals, addAnimal, setAnimals, setCurrentAnimal}) {
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Name</th>
                     <th>Type</th>
                     <th>Age</th>
@@ -40,7 +39,6 @@ export function Animals({animals, addAnimal, setAnimals, setCurrentAnimal}) {
                 {
                     animals.map(animal => (
                     <tr key={animal.id}>
-                        <td>{animal.id}</td>
                         <td>{animal.name}</td>
                         <td>{animal.type}</td>
                         <td>{animal.age}</td>
