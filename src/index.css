@@ -1,0 +1,83 @@
+html {
+  background-color: teal;
+  width: 100%;
+}
+
+body {
+  background-color: white;
+  margin: 0 auto;
+  max-width: 1024px;
+  min-height: 768px;
+  padding: 1.5em;
+  width: 100%;
+}
+
+button {
+  background-color: magenta;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 yellow, 2px 2px 5px 0 aqua;
+  margin: 0.75rem;
+  padding: 0.75rem;
+  transition: 0.5s;
+}
+
+button:is(:hover, :focus) {
+  background-color: yellow;
+  box-shadow: 0 0 14px 0 aqua, 2px 2px 10px 0 magenta;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
+button.birth {
+  background-color: aqua;
+  box-shadow: 0 0 7px 0 magenta, 2px 2px 5px 0 yellow;
+}
+
+button.birth:is(:hover, :focus) {
+  background-color: magenta;
+  box-shadow: 0 0 14px 0 yellow, 2px 2px 10px 0 aqua;
+}
+
+input {
+  border: 2px solid magenta;
+  border-radius: 2px;
+  box-shadow: 0 0 7px 0 yellow, 2px 2px 5px 0 aqua;
+  margin: 0.5em;
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 100%;
+}
+
+thead tr {
+  border-bottom: 5px solid yellow;
+  background-color: magenta;
+}
+
+th {
+  padding: 0.75rem;
+}
+
+td {
+  border: 2px solid teal;
+  padding: 0.5rem;
+}
+
+td button {
+  background-color: yellow;
+  box-shadow: 0 0 7px 0 aqua, 2px 2px 5px 0 magenta;
+  display: block;
+  margin: 0.25rem auto;
+  padding: 0.5rem;
+}
+
+td button:is(:hover, :focus) {
+  background-color: aqua;
+  box-shadow: 0 0 14px 0 magenta, 2px 2px 10px 0 yellow;
+  margin: 0.25rem auto;
+  padding: 0.5rem;
+}
