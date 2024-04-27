@@ -68,7 +68,7 @@ function App() {
     animals.push({
       age: 0,
       gender: "",
-      id: animals.length,
+      id: animals.at(-1).id + 1,
       isPregnant: false,
       name: mother.type ? "Baby " + mother.type : "Name",
       type: mother.type ? mother.type : "",

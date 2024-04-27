@@ -26,6 +26,7 @@ export function Animals({animals, addAnimal, setAnimals, setCurrentAnimal}) {
         <table>
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Type</th>
                     <th>Age</th>
@@ -39,6 +40,7 @@ export function Animals({animals, addAnimal, setAnimals, setCurrentAnimal}) {
                 {
                     animals.map(animal => (
                     <tr key={animal.id}>
+                        <td>{animal.id}</td>
                         <td>{animal.name}</td>
                         <td>{animal.type}</td>
                         <td>{animal.age}</td>
@@ -85,7 +87,7 @@ export function AnimalDetails({animal, setAnimal, update}) {
                 <label htmlFor="age">Age:</label>
                 <input name="age" placeholder="Age" onChange={(event) => setAnimal({...animal, age: event.target.value})} type="number" value={animal.age} /><br />
                 <label htmlFor="gender">Gender:</label>
-                <input name="gender" placeholder="Gender" onChange={(event) => setAnimal({...animal, gender: event.target.value})} value={animal.age} /><br />
+                <input name="gender" placeholder="Gender" onChange={(event) => setAnimal({...animal, gender: event.target.value})} value={animal.gender} /><br />
                 <label htmlFor="weight">Weight:</label>
                 <input name="weight" placeholder="Weight" onChange={(event) => setAnimal({...animal, weight: event.target.value})} type="number" step="any" value={animal.weight} /><br />
                 <label htmlFor="isPregnant">Is Pregnant:</label>
