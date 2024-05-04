@@ -1,8 +1,7 @@
-export function Animals({animals, addAnimal, setAnimals, setCurrentAnimal}) {
-    const editAnimal = (animal) => {
-      const index = animals.indexOf(animals.filter(a => a.id === animal.id));
-      animals[index] = animal;
-      setAnimals(animals);
+export function Animals({animals, addAnimal, setAnimals, setCurrentAnimal, setRefreshFlag, refreshFlag, url}) {
+    const editAnimal = async (animal) => {
+      await fetch(url, {method: "PUT", headers : {'Accept': 'application/json', 'Content-Type': 'application/json'}, body: JSON.stringify(animal)});
+      setRefreshFlag(!refreshFlag);
       setCurrentAnimal({
         "age": "",
         "gender": "",
@@ -14,8 +13,9 @@ export function Animals({animals, addAnimal, setAnimals, setCurrentAnimal}) {
       });
     };
 
-    const removeAnimal = (id) => {
-      setAnimals(animals.filter(animal => animal.id !== id));
+    const removeAnimal = async (id) => {
+      await fetch(url, {method: "DELETE", headers : {'Accept': 'application/json', 'Content-Type': 'application/json'}, body: JSON.stringify(animals.filter(a => a.id === id)[0])});
+      setRefreshFlag(!refreshFlag);
     }
 
     const showAnimal = (id) => {
